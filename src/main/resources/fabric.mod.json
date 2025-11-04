@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "upgradedpigscarrots",
+	"version": "${version}",
+	"name": "Sam's Upgraded Pigs & Carrots",
+	"description": "An upgrade to pigs with custom carrots and more! ",
+	"authors": [
+		"ItsGetWreckt"
+	],
+	"contact": {
+		"homepage": "https://therealsam.com/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/upgradedpigscarrots/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.therealsam.upgradedpigscarrots.SamsUpgradedPigsCarrots"
+		],
+		"fabric-datagen": [
+			"com.therealsam.upgradedpigscarrots.SamsUpgradedPigsCarrotsDataGenerator"
+		],
+        "client": [
+            "com.therealsam.upgradedpigscarrots.SamsUpgradedPigsCarrotsClient"
+        ]
+	},
+	"mixins": [
+		"upgradedpigscarrots.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
