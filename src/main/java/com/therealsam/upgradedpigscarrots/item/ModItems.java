@@ -11,7 +11,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item NETHERITE_CARROT = registerItem("netherite_carrot", new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedPigsCarrots.MOD_ID,"netherite_carrot")))));
+    public static final Item NETHERITE_CARROT = registerItem("netherite_carrot", new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedPigsCarrots.MOD_ID,"netherite_carrot"))).food(ModFoodComponents.NETHERITE_CARROT)));
     public static final Item ENCHANTED_GOLDEN_APPLE_ON_A_STICK = registerItem("enchanted_golden_apple_on_a_stick", new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedPigsCarrots.MOD_ID,"enchanted_golden_apple_on_a_stick")))));
 
 

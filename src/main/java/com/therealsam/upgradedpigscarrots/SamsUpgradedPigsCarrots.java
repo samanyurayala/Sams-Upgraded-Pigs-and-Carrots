@@ -1,5 +1,6 @@
 package com.therealsam.upgradedpigscarrots;
 
+import com.therealsam.upgradedpigscarrots.item.ModItemGroups;
 import com.therealsam.upgradedpigscarrots.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -12,6 +13,7 @@ public class SamsUpgradedPigsCarrots implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+        ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
 	}
 }
