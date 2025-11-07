@@ -13,6 +13,7 @@ public class ModItemGroups {
     public static final ItemGroup UPGRADED_PIGS_AND_CARROTS_GROUP = Registry.register(Registries.ITEM_GROUP, Identifier.of(SamsUpgradedPigsCarrots.MOD_ID, "upgraded_pigs_and_carrots"), FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.NETHERITE_CARROT)).displayName(Text.translatable("itemgroup.upgradedpigscarrots.upgraded_pigs_and_carrots")).entries((displayContext, entries) -> {
         entries.add(ModItems.NETHERITE_CARROT);
         entries.add(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
+        entries.add(ModItems.NETHERITE_CARROT_ON_A_STICK);
     }).build());
 
     public static void registerItemGroups() {

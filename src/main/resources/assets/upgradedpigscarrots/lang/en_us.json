@@ -1,5 +1,6 @@
 {
   "item.upgradedpigscarrots.netherite_carrot": "Netherite Carrot",
   "item.upgradedpigscarrots.enchanted_golden_apple_on_a_stick": "Enchanted Golden Apple on a Stick",
-  "itemgroup.upgradedpigscarrots.upgraded_pigs_and_carrots": "Upgraded Pigs and Carrots"
+  "item.upgradedpigscarrots.netherite_carrot_on_a_stick": "Netherite Carrot on a Stick",
+  "itemgroup.upgradedpigscarrots.upgraded_pigs_and_carrots": "Upgraded Pigs & Carrots"
 }
