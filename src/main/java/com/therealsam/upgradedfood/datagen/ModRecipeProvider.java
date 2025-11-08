@@ -8,6 +8,7 @@ import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -28,7 +29,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('#', Items.CARROT)
                         .input('%', Items.NETHERITE_INGOT)
                         .criterion(hasItem(Items.CARROT), conditionsFromItem(Items.CARROT))
-                        .offerTo(recipeExporter);
+                        .offerTo(recipeExporter, getRecipeName(ModItems.NETHERITE_CARROT));
                 createShaped(RecipeCategory.TOOLS, ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK)
                         .pattern(" #%")
                         .pattern("   ")
@@ -45,6 +46,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('%', ModItems.NETHERITE_CARROT)
                         .criterion(hasItem(Items.FISHING_ROD), conditionsFromItem(Items.FISHING_ROD))
                         .offerTo(recipeExporter);
+                createShaped(RecipeCategory.FOOD, ModItems.NETHERITE_CARROT)
+                        .pattern("###")
+                        .pattern("#%#")
+                        .pattern("###")
+                        .input('#', Items.CARROT)
+                        .input('%', ModItems.NETHERITE_CARROT)
+                        .criterion(hasItem(ModItems.NETHERITE_CARROT), conditionsFromItem(ModItems.NETHERITE_CARROT))
+                        .offerTo(recipeExporter, "netherite_carrot_alt");
             }
 
         };

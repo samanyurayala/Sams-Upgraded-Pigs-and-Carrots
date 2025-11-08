@@ -6,9 +6,9 @@
     "%": "minecraft:netherite_ingot"
   },
   "pattern": [
-    " % ",
-    "%#%",
-    " % "
+    " #%",
+    "   ",
+    "   "
   ],
   "result": {
     "count": 1,
