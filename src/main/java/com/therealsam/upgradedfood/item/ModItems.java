@@ -1,0 +1,38 @@
+package com.therealsam.upgradedfood.item;
+
+import com.therealsam.upgradedfood.SamsUpgradedFood;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.OnAStickItem;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.Identifier;
+
+public class ModItems {
+    public static final Item NETHERITE_CARROT = registerItem("netherite_carrot", new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedFood.MOD_ID,"netherite_carrot"))).food(ModFoodComponents.NETHERITE_CARROT)));
+    public static final Item ENCHANTED_GOLDEN_APPLE_ON_A_STICK = registerItem("enchanted_golden_apple_on_a_stick", new OnAStickItem<>(EntityType.PIG, 1, (new Item.Settings().maxCount(1).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedFood.MOD_ID,"enchanted_golden_apple_on_a_stick"))))));
+    public static final Item NETHERITE_CARROT_ON_A_STICK = registerItem("netherite_carrot_on_a_stick", new OnAStickItem<>(EntityType.PIG, 1, (new Item.Settings().maxCount(1).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedFood.MOD_ID,"netherite_carrot_on_a_stick"))))));
+
+
+
+    private static Item registerItem(String name, Item item) {
+        return Registry.register(Registries.ITEM, Identifier.of(SamsUpgradedFood.MOD_ID, name), item);
+    }
+
+    public static void registerModItems() {
+        SamsUpgradedFood.LOGGER.info("Registering Mod Items for " + SamsUpgradedFood.MOD_ID);
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(fabricItemGroupEntries -> {
+            fabricItemGroupEntries.add(NETHERITE_CARROT);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(fabricItemGroupEntries -> {
+            fabricItemGroupEntries.add(ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
+            fabricItemGroupEntries.add(NETHERITE_CARROT_ON_A_STICK);
+        });
+    }
+}

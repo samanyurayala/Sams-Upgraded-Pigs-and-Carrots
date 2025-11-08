@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "upgradedpigscarrots",
+	"id": "upgradedfood",
 	"version": "${version}",
-	"name": "Sam's Upgraded Pigs & Carrots",
-	"description": "An upgrade to pigs with custom carrots and more! ",
+	"name": "Sam's Upgraded Food",
+	"description": "An upgrade food! ",
 	"authors": [
 		"ItsGetWreckt"
 	],
@@ -12,21 +12,21 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/upgradedpigscarrots/icon.png",
+	"icon": "assets/upgradedfood/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.therealsam.upgradedpigscarrots.SamsUpgradedPigsCarrots"
+			"com.therealsam.upgradedfood.SamsUpgradedFood"
 		],
 		"fabric-datagen": [
-			"com.therealsam.upgradedpigscarrots.SamsUpgradedPigsCarrotsDataGenerator"
+			"com.therealsam.upgradedfood.SamsUpgradedFoodDataGenerator"
 		],
         "client": [
-            "com.therealsam.upgradedpigscarrots.SamsUpgradedPigsCarrotsClient"
+            "com.therealsam.upgradedfood.SamsUpgradedFoodClient"
         ]
 	},
 	"mixins": [
-		"upgradedpigscarrots.mixins.json"
+		"upgradedfood.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.17.3",

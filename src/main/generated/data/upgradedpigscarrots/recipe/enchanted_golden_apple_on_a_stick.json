@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:fishing_rod",
+    "%": "minecraft:enchanted_golden_apple"
+  },
+  "pattern": [
+    " #%",
+    "   ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "upgradedfood:enchanted_golden_apple_on_a_stick"
+  }
+}
