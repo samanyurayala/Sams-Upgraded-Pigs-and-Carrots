@@ -1,5 +1,6 @@
 package com.therealsam.upgradedfood.datagen;
 
+import com.therealsam.upgradedfood.block.ModBlocks;
 import com.therealsam.upgradedfood.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -53,7 +54,22 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('%', ModItems.NETHERITE_CARROT)
                         .criterion(hasItem(ModItems.NETHERITE_CARROT), conditionsFromItem(ModItems.NETHERITE_CARROT))
                         .offerTo(recipeExporter, "netherite_carrot_alt");
+                createShaped(RecipeCategory.FOOD, ModBlocks.BLOCK_OF_CARROT)
+                        .pattern("###")
+                        .pattern("###")
+                        .pattern("###")
+                        .input('#', Items.CARROT)
+                        .criterion(hasItem(Items.CARROT), conditionsFromItem(Items.CARROT))
+                        .offerTo(recipeExporter, "block_of_carrot");
+                createShaped(RecipeCategory.FOOD, Items.CARROT, 9)
+                        .pattern("   ")
+                        .pattern(" % ")
+                        .pattern("   ")
+                        .input('%', ModBlocks.BLOCK_OF_CARROT)
+                        .criterion(hasItem(ModBlocks.BLOCK_OF_CARROT), conditionsFromItem(ModBlocks.BLOCK_OF_CARROT))
+                        .offerTo(recipeExporter, "carrot_alt");
             }
+
 
         };
     }

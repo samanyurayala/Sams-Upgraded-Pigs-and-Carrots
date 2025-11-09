@@ -1,6 +1,7 @@
 package com.therealsam.upgradedfood.item;
 
 import com.therealsam.upgradedfood.SamsUpgradedFood;
+import com.therealsam.upgradedfood.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.ItemGroup;
@@ -19,6 +20,7 @@ public class ModItemGroups {
         entries.add(ModItems.NETHERITE_CARROT);
         entries.add(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
         entries.add(ModItems.CARROTS_ON_A_STICK);
+        entries.add(ModBlocks.BLOCK_OF_CARROT);
     }).build());
 
     public static void registerItemGroups() {

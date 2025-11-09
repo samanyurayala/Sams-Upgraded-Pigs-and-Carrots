@@ -16,7 +16,7 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    public static final Block BLOCK_OF_CARROT = registerBlock("block_of_carrot", AbstractBlock.Settings.create().strength(0F).sounds(BlockSoundGroup.RESIN));
+    public static final Block BLOCK_OF_CARROT = registerBlock("block_of_carrot", AbstractBlock.Settings.create().strength(0F).sounds(BlockSoundGroup.NETHERRACK));
 
     private static Block registerBlock(String name, AbstractBlock.Settings blockSettings) {
         RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(SamsUpgradedFood.MOD_ID, name));
@@ -34,7 +34,7 @@ public class ModBlocks {
     public static void registerModBlocks() {
         SamsUpgradedFood.LOGGER.info("Registering Mod Blocks for " + SamsUpgradedFood.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.add(ModBlocks.BLOCK_OF_CARROT);
         });
     }
