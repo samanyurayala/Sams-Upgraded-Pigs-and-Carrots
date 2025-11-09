@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "%": "upgradedfood:packed_carrots"
+  },
+  "pattern": [
+    "   ",
+    " % ",
+    "   "
+  ],
+  "result": {
+    "count": 9,
+    "id": "upgradedfood:dense_block_of_carrot"
+  }
+}

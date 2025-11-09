@@ -1,17 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "equipment",
+  "category": "misc",
   "key": {
-    "#": "minecraft:fishing_rod",
     "%": "upgradedfood:compressed_carrots"
   },
   "pattern": [
     "   ",
-    "%#%",
+    " % ",
     "   "
   ],
   "result": {
-    "count": 1,
-    "id": "upgradedfood:carrots_on_a_stick"
+    "count": 9,
+    "id": "upgradedfood:pressed_carrots"
   }
 }

@@ -4,5 +4,9 @@
   "item.upgradedfood.carrots_on_a_stick": "Carrots on a Stick",
   "itemgroup.upgradedfood.upgraded_food": "Upgraded Food",
 
-  "item.upgradedfood.block_of_carrot": "Block of Carrot"
+  "item.upgradedfood.block_of_carrot": "Block of Carrot",
+  "item.upgradedfood.dense_block_of_carrot": "Dense Block of Carrot",
+  "item.upgradedfood.packed_carrots": "Packed Carrots",
+  "item.upgradedfood.pressed_carrots": "Pressed Carrots",
+  "item.upgradedfood.compressed_carrots": "Compressed Carrots"
 }

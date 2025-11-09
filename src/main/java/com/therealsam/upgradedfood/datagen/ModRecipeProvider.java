@@ -39,11 +39,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.FISHING_ROD), conditionsFromItem(Items.FISHING_ROD))
                         .offerTo(recipeExporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.CARROTS_ON_A_STICK)
-                        .pattern(" #%")
                         .pattern("   ")
+                        .pattern("%#%")
                         .pattern("   ")
                         .input('#', Items.FISHING_ROD)
-                        .input('%', ModItems.NETHERITE_CARROT)
+                        .input('%', ModBlocks.COMPRESSED_CARROTS)
                         .criterion(hasItem(Items.FISHING_ROD), conditionsFromItem(Items.FISHING_ROD))
                         .offerTo(recipeExporter);
                 createShaped(RecipeCategory.FOOD, ModItems.NETHERITE_CARROT)
@@ -68,6 +68,62 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('%', ModBlocks.BLOCK_OF_CARROT)
                         .criterion(hasItem(ModBlocks.BLOCK_OF_CARROT), conditionsFromItem(ModBlocks.BLOCK_OF_CARROT))
                         .offerTo(recipeExporter, "carrot_alt");
+                createShaped(RecipeCategory.FOOD, ModBlocks.DENSE_BLOCK_OF_CARROT)
+                        .pattern("###")
+                        .pattern("###")
+                        .pattern("###")
+                        .input('#', ModBlocks.BLOCK_OF_CARROT)
+                        .criterion(hasItem(ModBlocks.BLOCK_OF_CARROT), conditionsFromItem(ModBlocks.BLOCK_OF_CARROT))
+                        .offerTo(recipeExporter, "dense_block_of_carrot");
+                createShaped(RecipeCategory.FOOD, ModBlocks.BLOCK_OF_CARROT, 9)
+                        .pattern("   ")
+                        .pattern(" % ")
+                        .pattern("   ")
+                        .input('%', ModBlocks.DENSE_BLOCK_OF_CARROT)
+                        .criterion(hasItem(ModBlocks.DENSE_BLOCK_OF_CARROT), conditionsFromItem(ModBlocks.DENSE_BLOCK_OF_CARROT))
+                        .offerTo(recipeExporter, "block_of_carrot_alt");
+                createShaped(RecipeCategory.FOOD, ModBlocks.PACKED_CARROTS)
+                        .pattern("###")
+                        .pattern("###")
+                        .pattern("###")
+                        .input('#', ModBlocks.DENSE_BLOCK_OF_CARROT)
+                        .criterion(hasItem(ModBlocks.DENSE_BLOCK_OF_CARROT), conditionsFromItem(ModBlocks.DENSE_BLOCK_OF_CARROT))
+                        .offerTo(recipeExporter, "packed_carrots");
+                createShaped(RecipeCategory.FOOD, ModBlocks.DENSE_BLOCK_OF_CARROT, 9)
+                        .pattern("   ")
+                        .pattern(" % ")
+                        .pattern("   ")
+                        .input('%', ModBlocks.PACKED_CARROTS)
+                        .criterion(hasItem(ModBlocks.PACKED_CARROTS), conditionsFromItem(ModBlocks.PACKED_CARROTS))
+                        .offerTo(recipeExporter, "dense_block_of_carrot_alt");
+                createShaped(RecipeCategory.FOOD, ModBlocks.PRESSED_CARROTS)
+                        .pattern("###")
+                        .pattern("###")
+                        .pattern("###")
+                        .input('#', ModBlocks.PACKED_CARROTS)
+                        .criterion(hasItem(ModBlocks.PACKED_CARROTS), conditionsFromItem(ModBlocks.PACKED_CARROTS))
+                        .offerTo(recipeExporter, "pressed_carrots");
+                createShaped(RecipeCategory.FOOD, ModBlocks.PACKED_CARROTS, 9)
+                        .pattern("   ")
+                        .pattern(" % ")
+                        .pattern("   ")
+                        .input('%', ModBlocks.PRESSED_CARROTS)
+                        .criterion(hasItem(ModBlocks.PRESSED_CARROTS), conditionsFromItem(ModBlocks.PRESSED_CARROTS))
+                        .offerTo(recipeExporter, "packed_carrots_alt");
+                createShaped(RecipeCategory.FOOD, ModBlocks.COMPRESSED_CARROTS)
+                        .pattern("###")
+                        .pattern("###")
+                        .pattern("###")
+                        .input('#', ModBlocks.PRESSED_CARROTS)
+                        .criterion(hasItem(ModBlocks.PRESSED_CARROTS), conditionsFromItem(ModBlocks.PRESSED_CARROTS))
+                        .offerTo(recipeExporter, "compressed_carrots");
+                createShaped(RecipeCategory.FOOD, ModBlocks.PRESSED_CARROTS, 9)
+                        .pattern("   ")
+                        .pattern(" % ")
+                        .pattern("   ")
+                        .input('%', ModBlocks.COMPRESSED_CARROTS)
+                        .criterion(hasItem(ModBlocks.COMPRESSED_CARROTS), conditionsFromItem(ModBlocks.COMPRESSED_CARROTS))
+                        .offerTo(recipeExporter, "pressed_carrots_alt");
             }
 
 

@@ -1,12 +1,16 @@
 package com.therealsam.upgradedfood.mixin;
 
 import com.therealsam.upgradedfood.item.ModItems;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SaddledComponent;
 import net.minecraft.entity.ai.goal.GoalSelector;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -74,7 +78,7 @@ public abstract class PigEntityMixin {
     }
 
     @Inject(method = "tickControlled", at = @At("HEAD"))
-    private void customHealth(PlayerEntity controllingPlayer, Vec3d movementInput, CallbackInfo info) {
+    private void customControl(PlayerEntity controllingPlayer, Vec3d movementInput, CallbackInfo info) {
         PigEntity pig = (PigEntity)(Object)this;
 
         ItemStack getMain = controllingPlayer.getMainHandStack();
@@ -94,6 +98,7 @@ public abstract class PigEntityMixin {
         } else if (hasCarrotsStick) {
             health.setBaseValue(baseHealth * 2);
             pig.setHealth((float)(baseHealth * 2 + currentHealth - getMaxHealth));
+            pig.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 1, true, false));
         } else {
             health.setBaseValue(baseHealth);
             pig.setHealth((float)(baseHealth + currentHealth - getMaxHealth));

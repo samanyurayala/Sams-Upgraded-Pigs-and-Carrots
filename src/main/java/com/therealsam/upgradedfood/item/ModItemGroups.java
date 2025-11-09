@@ -21,6 +21,10 @@ public class ModItemGroups {
         entries.add(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
         entries.add(ModItems.CARROTS_ON_A_STICK);
         entries.add(ModBlocks.BLOCK_OF_CARROT);
+        entries.add(ModBlocks.DENSE_BLOCK_OF_CARROT);
+        entries.add(ModBlocks.PACKED_CARROTS);
+        entries.add(ModBlocks.PRESSED_CARROTS);
+        entries.add(ModBlocks.COMPRESSED_CARROTS);
     }).build());
 
     public static void registerItemGroups() {

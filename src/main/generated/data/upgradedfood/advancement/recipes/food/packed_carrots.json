@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dense_block_of_carrot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "upgradedfood:dense_block_of_carrot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "upgradedfood:packed_carrots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dense_block_of_carrot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "upgradedfood:packed_carrots"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pressed_carrots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "upgradedfood:pressed_carrots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "upgradedfood:compressed_carrots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pressed_carrots"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "upgradedfood:compressed_carrots"
+    ]
+  }
+}
