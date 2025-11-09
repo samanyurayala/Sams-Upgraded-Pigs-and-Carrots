@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "upgradedfood:packed_carrots",
+    "upgradedfood:pressed_carrots",
+    "upgradedfood:compressed_carrots"
+  ]
+}

@@ -17,10 +17,10 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
     public static final Block BLOCK_OF_CARROT = registerBlock("block_of_carrot", AbstractBlock.Settings.create().strength(0F).sounds(BlockSoundGroup.NETHERRACK));
-    public static final Block DENSE_BLOCK_OF_CARROT = registerBlock("dense_block_of_carrot", AbstractBlock.Settings.create().strength(0.5F).sounds(BlockSoundGroup.NETHERRACK));
-    public static final Block PACKED_CARROTS = registerBlock("packed_carrots", AbstractBlock.Settings.create().strength(2F).sounds(BlockSoundGroup.MUD_BRICKS));
-    public static final Block PRESSED_CARROTS = registerBlock("pressed_carrots", AbstractBlock.Settings.create().strength(3.5F).sounds(BlockSoundGroup.BONE));
-    public static final Block COMPRESSED_CARROTS = registerBlock("compressed_carrots", AbstractBlock.Settings.create().strength(5F).sounds(BlockSoundGroup.DEEPSLATE));
+    public static final Block DENSE_BLOCK_OF_CARROT = registerBlock("dense_block_of_carrot", AbstractBlock.Settings.create().strength(0.5F).requiresTool().sounds(BlockSoundGroup.NETHERRACK));
+    public static final Block PACKED_CARROTS = registerBlock("packed_carrots", AbstractBlock.Settings.create().strength(2F).requiresTool().sounds(BlockSoundGroup.MUD_BRICKS));
+    public static final Block PRESSED_CARROTS = registerBlock("pressed_carrots", AbstractBlock.Settings.create().strength(3.5F).requiresTool().sounds(BlockSoundGroup.BONE));
+    public static final Block COMPRESSED_CARROTS = registerBlock("compressed_carrots", AbstractBlock.Settings.create().strength(5F).requiresTool().sounds(BlockSoundGroup.DEEPSLATE));
 
     private static Block registerBlock(String name, AbstractBlock.Settings blockSettings) {
         RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(SamsUpgradedFood.MOD_ID, name));

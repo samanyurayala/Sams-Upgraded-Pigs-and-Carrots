@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "upgradedfood:block/block_of_carrot"
+      "model": "upgradedfood:block/dense_block_of_carrot"
     }
   }
 }
