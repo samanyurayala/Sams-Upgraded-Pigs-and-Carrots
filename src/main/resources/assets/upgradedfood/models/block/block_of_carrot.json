@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "upgradedfood:block/block_of_carrot"
+  }
+}

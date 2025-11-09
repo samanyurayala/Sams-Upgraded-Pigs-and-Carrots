@@ -1,5 +1,6 @@
 package com.therealsam.upgradedfood;
 
+import com.therealsam.upgradedfood.block.ModBlocks;
 import com.therealsam.upgradedfood.item.ModItemGroups;
 import com.therealsam.upgradedfood.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -15,5 +16,6 @@ public class SamsUpgradedFood implements ModInitializer {
 	public void onInitialize() {
         ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
 	}
 }
