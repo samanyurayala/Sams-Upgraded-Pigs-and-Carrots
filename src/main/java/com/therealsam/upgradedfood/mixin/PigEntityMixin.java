@@ -1,5 +1,6 @@
 package com.therealsam.upgradedfood.mixin;
 
+import com.therealsam.upgradedfood.TrackPlayerJump;
 import com.therealsam.upgradedfood.item.ModItems;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -27,6 +28,8 @@ import java.util.Objects;
 
 @Mixin(PigEntity.class)
 public abstract class PigEntityMixin {
+
+    private int ticksPerJump = 10;
 
     @Shadow private SaddledComponent saddledComponent;
 
@@ -78,7 +81,7 @@ public abstract class PigEntityMixin {
     }
 
     @Inject(method = "tickControlled", at = @At("HEAD"))
-    private void customControl(PlayerEntity controllingPlayer, Vec3d movementInput, CallbackInfo info) {
+    private void customHealth(PlayerEntity controllingPlayer, Vec3d movementInput, CallbackInfo info) {
         PigEntity pig = (PigEntity)(Object)this;
 
         ItemStack getMain = controllingPlayer.getMainHandStack();
@@ -104,6 +107,27 @@ public abstract class PigEntityMixin {
             pig.setHealth((float)(baseHealth + currentHealth - getMaxHealth));
         }
 
+    }
+    @Inject(method = "tickControlled", at = @At("HEAD"))
+    private void customJump(PlayerEntity controllingPlayer, Vec3d movementInput, CallbackInfo info) {
+        PigEntity pig = (PigEntity)(Object)this;
+
+        ItemStack getMain = controllingPlayer.getMainHandStack();
+        ItemStack getOff = controllingPlayer.getOffHandStack();
+
+        boolean hasCarrotsStick = getMain.isOf(ModItems.CARROTS_ON_A_STICK) || getOff.isOf(ModItems.CARROTS_ON_A_STICK);
+
+        if (hasCarrotsStick) {
+            if (TrackPlayerJump.getJump() && pig.isOnGround() && ticksPerJump == 10) {
+                ticksPerJump = 0;
+            }
+
+            if (ticksPerJump < 10) {
+                pig.setVelocity(pig.getVelocity().x, 1.5f, pig.getVelocity().z);
+                pig.velocityModified = true;
+                ticksPerJump++;
+            }
+        }
     }
 }
 
