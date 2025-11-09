@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "upgradedfood:netherite_carrot_on_a_stick"
+        "recipe": "upgradedfood:carrots_on_a_stick"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "upgradedfood:netherite_carrot_on_a_stick"
+      "upgradedfood:carrots_on_a_stick"
     ]
   }
 }

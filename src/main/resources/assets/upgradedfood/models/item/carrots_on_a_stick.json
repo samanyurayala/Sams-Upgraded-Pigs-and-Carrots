@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld_rod",
   "textures": {
-    "layer0": "upgradedfood:item/netherite_carrot_on_a_stick"
+    "layer0": "upgradedfood:item/carrots_on_a_stick"
   }
 }

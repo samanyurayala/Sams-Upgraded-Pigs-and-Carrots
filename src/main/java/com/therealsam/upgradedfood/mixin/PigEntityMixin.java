@@ -31,7 +31,7 @@ public abstract class PigEntityMixin {
         PigEntity pig = (PigEntity)(Object)this;
         GoalSelector selector = ((EntityAccessorMixin)(Object)this).getGoalSelector();
         selector.add(4, new TemptGoal(pig, 1.2, stack -> stack.isOf(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK), false));
-        selector.add(4, new TemptGoal(pig, 1.1, stack -> stack.isOf(ModItems.NETHERITE_CARROT_ON_A_STICK), false));
+        selector.add(4, new TemptGoal(pig, 1.1, stack -> stack.isOf(ModItems.CARROTS_ON_A_STICK), false));
         selector.add(4, new TemptGoal(pig, 1.1, stack -> stack.isOf(ModItems.NETHERITE_CARROT), false));
     }
 
@@ -46,9 +46,9 @@ public abstract class PigEntityMixin {
 
         boolean hasCarrotStick = getMain.isOf(Items.CARROT_ON_A_STICK) || getOff.isOf(Items.CARROT_ON_A_STICK);
         boolean hasEnchantedAppleStick = getMain.isOf(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK) || getOff.isOf(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
-        boolean hasNetheriteCarrotStick = getMain.isOf(ModItems.NETHERITE_CARROT_ON_A_STICK) || getOff.isOf(ModItems.NETHERITE_CARROT_ON_A_STICK);
+        boolean hasCarrotsStick = getMain.isOf(ModItems.CARROTS_ON_A_STICK) || getOff.isOf(ModItems.CARROTS_ON_A_STICK);
 
-        if (hasCarrotStick || hasEnchantedAppleStick || hasNetheriteCarrotStick)
+        if (hasCarrotStick || hasEnchantedAppleStick || hasCarrotsStick)
             cir.setReturnValue(player);
     }
 
@@ -60,14 +60,14 @@ public abstract class PigEntityMixin {
         ItemStack getOff = controllingPlayer.getOffHandStack();
 
         boolean hasEnchantedAppleStick = getMain.isOf(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK) || getOff.isOf(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
-        boolean hasNetheriteCarrotStick = getMain.isOf(ModItems.NETHERITE_CARROT_ON_A_STICK) || getOff.isOf(ModItems.NETHERITE_CARROT_ON_A_STICK);
+        boolean hasCarrotsStick = getMain.isOf(ModItems.CARROTS_ON_A_STICK) || getOff.isOf(ModItems.CARROTS_ON_A_STICK);
 
         double baseSpeed = pig.getAttributeValue(EntityAttributes.MOVEMENT_SPEED) * 0.225 * saddledComponent.getMovementSpeedMultiplier();
 
         if (hasEnchantedAppleStick) {
             cir.setReturnValue((float)(baseSpeed * 5));
-        } else if (hasNetheriteCarrotStick) {
-            cir.setReturnValue((float)(baseSpeed * 10));
+        } else if (hasCarrotsStick) {
+            cir.setReturnValue((float)(baseSpeed * 30));
         } else {
             cir.setReturnValue((float)(baseSpeed));
         }
@@ -81,7 +81,7 @@ public abstract class PigEntityMixin {
         ItemStack getOff = controllingPlayer.getOffHandStack();
 
         boolean hasEnchantedAppleStick = getMain.isOf(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK) || getOff.isOf(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
-        boolean hasNetheriteCarrotStick = getMain.isOf(ModItems.NETHERITE_CARROT_ON_A_STICK) || getOff.isOf(ModItems.NETHERITE_CARROT_ON_A_STICK);
+        boolean hasCarrotsStick = getMain.isOf(ModItems.CARROTS_ON_A_STICK) || getOff.isOf(ModItems.CARROTS_ON_A_STICK);
 
         double baseHealth = 10;
         EntityAttributeInstance health = Objects.requireNonNull(pig.getAttributeInstance(EntityAttributes.MAX_HEALTH));
@@ -91,7 +91,7 @@ public abstract class PigEntityMixin {
         if (hasEnchantedAppleStick) {
             health.setBaseValue(baseHealth * 3);
             pig.setHealth((float)(baseHealth * 3 + currentHealth - getMaxHealth));
-        } else if (hasNetheriteCarrotStick) {
+        } else if (hasCarrotsStick) {
             health.setBaseValue(baseHealth * 2);
             pig.setHealth((float)(baseHealth * 2 + currentHealth - getMaxHealth));
         } else {

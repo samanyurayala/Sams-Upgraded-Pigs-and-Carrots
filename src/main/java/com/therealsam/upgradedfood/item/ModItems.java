@@ -1,6 +1,7 @@
 package com.therealsam.upgradedfood.item;
 
 import com.therealsam.upgradedfood.SamsUpgradedFood;
+import com.therealsam.upgradedfood.item.custom.customStickItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
@@ -15,7 +16,7 @@ import net.minecraft.util.Identifier;
 public class ModItems {
     public static final Item NETHERITE_CARROT = registerItem("netherite_carrot", new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedFood.MOD_ID,"netherite_carrot"))).food(ModFoodComponents.NETHERITE_CARROT)));
     public static final Item ENCHANTED_GOLDEN_APPLE_ON_A_STICK = registerItem("enchanted_golden_apple_on_a_stick", new OnAStickItem<>(EntityType.PIG, 1, (new Item.Settings().maxCount(1).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedFood.MOD_ID,"enchanted_golden_apple_on_a_stick"))))));
-    public static final Item NETHERITE_CARROT_ON_A_STICK = registerItem("netherite_carrot_on_a_stick", new OnAStickItem<>(EntityType.PIG, 1, (new Item.Settings().maxCount(1).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedFood.MOD_ID,"netherite_carrot_on_a_stick"))))));
+    public static final Item CARROTS_ON_A_STICK = registerItem("carrots_on_a_stick", new customStickItem(EntityType.PIG, 7, (new Item.Settings().maxCount(1).maxDamage(25).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedFood.MOD_ID,"carrots_on_a_stick"))))));
 
 
 
@@ -32,7 +33,7 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.add(ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
-            fabricItemGroupEntries.add(NETHERITE_CARROT_ON_A_STICK);
+            fabricItemGroupEntries.add(CARROTS_ON_A_STICK);
         });
     }
 }

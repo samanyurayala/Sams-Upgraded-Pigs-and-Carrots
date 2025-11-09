@@ -8,7 +8,6 @@ import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -38,7 +37,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('%', Items.ENCHANTED_GOLDEN_APPLE)
                         .criterion(hasItem(Items.FISHING_ROD), conditionsFromItem(Items.FISHING_ROD))
                         .offerTo(recipeExporter);
-                createShaped(RecipeCategory.TOOLS, ModItems.NETHERITE_CARROT_ON_A_STICK)
+                createShaped(RecipeCategory.TOOLS, ModItems.CARROTS_ON_A_STICK)
                         .pattern(" #%")
                         .pattern("   ")
                         .pattern("   ")

@@ -18,6 +18,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ModTags.Items.ENCHANTED_APPLE_STICK_TOOL_REPAIR)
                 .add(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
         valueLookupBuilder(ModTags.Items.NETHERITE_CARROT_STICK_TOOL_REPAIR)
-                .add(ModItems.NETHERITE_CARROT_ON_A_STICK);
+                .add(ModItems.CARROTS_ON_A_STICK);
     }
 }
