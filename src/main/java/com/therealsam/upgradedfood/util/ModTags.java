@@ -19,7 +19,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> ENCHANTED_APPLE_STICK_TOOL_REPAIR = createTag("enchanted_apple_stick_tool_repair");
-        public static final TagKey<Item> NETHERITE_CARROT_STICK_TOOL_REPAIR = createTag("netherite_stick_stick_tool_repair");
+        public static final TagKey<Item> CARROTS_STICK_TOOL_REPAIR = createTag("netherite_stick_stick_tool_repair");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(SamsUpgradedFood.MOD_ID, name));

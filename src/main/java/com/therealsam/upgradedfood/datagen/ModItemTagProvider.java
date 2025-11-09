@@ -17,7 +17,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         valueLookupBuilder(ModTags.Items.ENCHANTED_APPLE_STICK_TOOL_REPAIR)
                 .add(ModItems.ENCHANTED_GOLDEN_APPLE_ON_A_STICK);
-        valueLookupBuilder(ModTags.Items.NETHERITE_CARROT_STICK_TOOL_REPAIR)
+        valueLookupBuilder(ModTags.Items.CARROTS_STICK_TOOL_REPAIR)
                 .add(ModItems.CARROTS_ON_A_STICK);
     }
 }
